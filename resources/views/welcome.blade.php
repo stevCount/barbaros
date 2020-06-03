@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Test app barbaros
+                    Test app barbaros changes
                 </div>
 
                 <div class="links">
