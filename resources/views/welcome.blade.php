@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Appbarbarostest
+                    App Barbaros
                 </div>
 
                 <div class="links">
