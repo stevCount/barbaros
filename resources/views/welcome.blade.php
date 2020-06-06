@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!doctype html>
+<html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>App Barbaros</title>
+        <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
         <style>
@@ -51,7 +52,7 @@
             .links > a {
                 color: #636b6f;
                 padding: 0 25px;
-                font-size: 13px;
+                font-size: 12px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
@@ -63,38 +64,50 @@
             }
         </style>
     </head>
+
     <body>
+      {{-- Logout form --}}
+      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+       @csrf
+      </form>
+      {{-- /Logout form --}}
+
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('google.folders') }}">Ver mis archivos</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
+                        <a href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();">
+                        Cerrar sesión</a>
+                    @else
+                        <a href="{{ route('login.google') }}">Ingresar con Gmail</a>
                     @endauth
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    App Barbaros
+
+                  <img src="{{ asset('svg/home.svg') }}" width="250">
+
+                  <br>
+                    LaraDrive
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://github.com/brayanangaritar" target="_blank"><b>Documentación</b></a>
+
+                    <a href="https://cafeycodigo.com" target="_blank"><b>Sitio web</b></a>
+                    
+                    <a href="https://www.linkedin.com/in/brayanangaritar/" target="_blank"><b>Linkedin</b></a>
+
                 </div>
             </div>
         </div>
     </body>
 </html>
+
+
