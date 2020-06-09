@@ -20,14 +20,14 @@ class CreateReservationDetailsTable extends Migration
             $table->unsignedBigInteger('hair_cut_id');
             $table->unsignedBigInteger('state_id');
             $table->integer('amount');
-            $table->foreign('reservations')->references('id')
+            /*$table->foreign('reservations')->references('id')
                 ->on('reservation_id');
             $table->foreign('products')->references('id')
                 ->on('product_id');
             $table->foreign('hair_cuts')->references('id')
                 ->on('hair_cut_id');
             $table->foreign('states')->references('id')
-                ->on('state_id');
+                ->on('state_id');*/
             $table->timestamps();
         });
     }

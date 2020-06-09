@@ -21,10 +21,10 @@ class CreateReservationsTable extends Migration
             $table->string('name');
             $table->string('mobile');
             $table->string('mail')->nullable();
-            $table->foreign('reservation_types')->references('id')
+            /*$table->foreign('reservation_types')->references('id')
                 ->on('reservation_type');
             $table->foreign('users')->references('id')
-                ->on('user_id');
+                ->on('user_id');*/
             $table->timestamps();
         });
     }

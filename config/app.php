@@ -175,6 +175,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\GoogleClientProvider::class,
+        App\Providers\DropboxServiceProvider::class,
 
     ],
 
